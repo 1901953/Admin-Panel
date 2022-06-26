@@ -1,0 +1,629 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+/* box-shadow是用於添加陰影部分，其中rgba 中的a 是顯示陰影程度 */
+:root{
+    --blue:#2980b9;
+    --red:tomato;
+    --orange:orange;
+    --black:#333;
+    --white:#fff;
+    --bg-color:#eee;
+    --dark-bg:rgba(0,0,0,.7);
+    --box-shadow:0 .5rem 1rem rgba(0, 0, 0, 0.1);
+    --border:.1rem solid #999;
+ }
+ 
+ *{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+ }
+
+/* 凡是只有一個class的css定義，就是專門反復常用的 */
+/* overflow-x用於顯示x軸的水平劃輪 */
+html{
+    font-size:62.5%;
+    overflow-x:hidden;
+}
+
+/* 凡是只有一個class的css定義，就是專門反復常用的 */
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 凡是只有一個class的css定義，就是專門反復常用的 */
+.section{
+    padding: 2rem;
+}
+
+/* /* 凡是只有一個class的css定義，就是專門反復常用的 */ */
+.heading{
+    text-align: center;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 2rem;
+}
+
+
+/* 凡是只有一個class的css定義，就是專門反復常用的 */
+.btn,
+.option-btn,
+.delete-btn{
+    display: block;
+    color:var(--white);
+    background-color: var(--blue);
+    font-size: 1.5rem;
+    text-align: center;
+    width:100%;
+    padding:1.3rem 1.2rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover{
+    color:var(--white);
+    background-color: var(--black);
+}
+
+
+.delete-btn{
+    margin-top: 0;
+    background-color: var(--orange);
+}
+
+
+.delete-btn{
+    margin-top: 0;
+    background-color: var(--red);
+}
+
+
+
+.search_button{
+    border-radius: .5rem;
+    padding:.5rem 1rem;
+    color:var(--white);
+    background-color: #27282c;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    transition: .5s;
+ 
+
+}
+
+.search_button:hover
+{
+    letter-spacing: .3rem;
+
+}
+
+
+
+
+/* 當使用了display:flex;的時候，就要使用justify-content */
+.message{
+    background-color: var(--blue);
+    position: sticky;
+    top:0; left:0;
+    z-index:10000;
+    border-radius: .5rem;
+    background-color: var(--white);
+    padding: 1.5rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    gap:1.5rem;
+}
+
+.message span{
+    font-size: 2rem;
+    color:var(--black);
+}
+
+.message i{
+    font-size: 2.5rem;
+    color:var(--black);
+    cursor: pointer;
+}
+
+.message i:hover{
+    color:red;
+}
+
+.header{
+    background-color: var(--blue);
+    position: sticky;
+    top:0; left:0;
+    z-index:1000;
+}
+
+.header .flex{
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+.header .flex .logo{
+    margin-right: auto;
+    color:var(--white);
+    font-size: 2.5rem;
+}
+
+
+.header .flex .navbar a{
+    color:var(--white);
+    font-size: 1.5rem;
+    margin-left: .5rem;
+    padding: .1rem .2rem;
+    align-items: center;
+}
+
+
+.header .flex .navbar a:hover{
+    color: var(--black);
+    text-decoration: underline;
+}
+
+
+
+
+/*  */
+.header .flex .cart{
+    color:var(--white);
+    font-size: 1.5rem;
+    margin-left: .5rem;
+    padding: .1rem .2rem;
+    align-items: center;
+}
+
+
+.header .flex .cart:hover{
+    color: var(--black);
+    text-decoration: underline;
+}
+
+
+.header .flex .cart span{
+    color:var(--black);
+    font-size: 1.5rem;
+    padding: .5rem .3rem;
+    border-radius: .5rem;
+    background-color: white;
+}
+
+
+#menu-btn{
+    font-size: 2.5rem;
+    color:var(--white);
+    display: none;
+    margin-left: 1rem;
+}
+
+#menu-btn:hover{
+    color:var(--black);
+}
+
+
+.add-product-form{
+    max-width: 50rem;
+    background-color: var(--bg-color);
+    border-radius: .5rem;
+    padding: 2rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom:2rem;
+}
+
+
+.add-product-form h3{
+    color: var(--blue);
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+
+.add-product-form .box{
+    width: 100%;
+    padding: 1.4rem 1.2rem;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    color:var(--black);
+    margin-bottom: 1rem;
+    background-color: var(--white);
+}
+
+
+
+
+.display-product-table table{
+    width: 100%;
+    text-align: center;
+ }
+
+
+
+ .display-product-table table thead th{
+    padding:1.5rem;
+    font-size: 2rem;
+    background-color: var(--black);
+    color:var(--white);
+ }
+ 
+
+.display-product-table table tr td{
+    padding:1.5rem;
+    font-size: 2rem;
+    color:var(--black);
+}
+
+
+/* first-child:意思是位居第一行的内容 padding必須為0; */
+.display-product-table table td:first-child{
+    padding:0;
+}
+
+
+/* nth-child(even)：在這裏的意思是凡是table中為偶數的行，背景顏色都是var(--bg-color) */
+.display-product-table table tr:nth-child(even){
+    background-color: var(--bg-color);
+}
+
+
+.display-product-table .empty{
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: var(--black);
+    border-radius: 1rem;
+    background-color: var(--bg-color);
+    font-weight: bold;
+}
+
+
+.edit-form-container{
+    position: fixed;
+    top:0; left:0;
+    z-index: 1100;
+    background-color: var(--bg-color);
+    padding:2rem;
+    display: none;
+    align-items: center;
+
+    /* justify-content :意思即是將圖片等内容 放在瀏覽器中間，跟 控制文字的text-align一樣用法*/
+
+    justify-content: center;
+    width:100%;
+    min-height: 100vh;
+
+}
+
+
+.edit-form-container form{
+    width:50rem;
+    border-radius: .5rem;
+    background-color: var(--white);
+    text-align:center;
+}
+
+
+.edit-form-container form .box{
+    width:100%;
+    background-color: var(--bg-color);
+    padding: 1.2rem 1.4rem;
+    border-radius: .5rem;
+    margin:1rem 0;
+    font-size: 1.7rem;
+    text-transform: none;
+}
+
+
+/* 凡是用於顯示 多張圖片，最好的顯示方法就是 display:grid; （網格形式） */
+.products .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    gap:1.5rem;
+    justify-content: center;
+}
+
+
+.products .box-container .box{
+    text-align: center;
+    padding: 2.5rem;
+    border-radius: .5rem;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+}
+
+.products .box-container .box img{
+    height:25rem;
+}
+
+.products .box-container .box h3{
+    color:var(--black);
+    font-size: 3.5rem;
+    margin: 1rem 0;
+}
+
+
+.products .box-container .box .quantity_text{
+    text-transform: none;
+    color:#333;
+}
+
+
+.products .box-container .box .price{
+    color:var(--black);
+    font-size: 2.5rem;
+
+}
+
+.shopping-cart table{
+    width: 100%;
+    text-align: center;
+}
+
+
+.shopping-cart .heading_cart{
+    text-align: center;
+    padding: 3.5rem 1rem;
+    font-size: 3.5rem;
+    font-family: fantasy;
+
+}
+
+.shopping-cart table thead th{
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem .5rem;
+    color:var(--white);
+    border:var(--border);
+    background-color: var(--black);
+    box-shadow: rgb(136, 132, 132)  1px 2px;
+}
+
+.shopping-cart table tbody img{
+    height:200px;
+}
+
+.shopping-cart table tbody tr td{
+    font-size: 2.5rem;
+    border-bottom: rgb(149, 143, 143) solid 1px;
+    padding-top: 2.5rem;
+    align-items: center;
+    padding-bottom: 1.5rem;
+}
+
+
+.shopping-cart table input[type="number"]{
+    border: var(--border);
+    padding:1rem 2rem;
+    font-size: 2rem;
+    color:var(--black);
+    width:10rem;
+    border-radius: .5rem;
+}
+
+.shopping-cart table input[type="submit"]{
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    background-color: var(--orange);
+    border-radius: .5rem;
+}
+
+.shopping-cart table input[type="submit"]:hover{
+    color:white;
+    background-color: var(--black);
+}
+
+.shopping-cart table .table-bottom{
+    align-items: center;
+    padding:1.5rem;
+    background-color: var(--bg-color);
+}
+
+
+.shopping-cart .checkout-btn{
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.shopping-cart .checkout-btn a{
+    display: inline-block;
+    width: 25rem;
+}
+
+.shopping-cart .checkout-btn a.disabled{
+    pointer-events: none;
+    opacity: .5;
+    user-select: none;
+    background-color: var(--red);
+ }
+ 
+
+.checkout-form .fonting{
+    text-align: center;
+    font-size: 3.5rem;
+    padding: 1.5rem 2.5rem;
+    font-family: fantasy;
+    font-weight: bold;
+}
+
+
+
+.checkout-form form{
+    padding: 2rem;
+    border-radius: .5rem;
+    background-color: var(--bg-color);
+}
+
+/* flex-wrap: wrap; 是自動靈活判斷内容是否需要換行來顯示
+    但是要想使用  flex-wrap: wrap; 的前提下，你必須要使用 display:flex;
+*/
+.checkout-form form .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.checkout-form form .flex .inputBox{
+    flex: 1 1 40rem;
+}
+
+.checkout-form form .flex .inputBox span{
+    font-size: 2rem;
+    color:var(--black);
+}
+
+.checkout-form form .flex .inputBox input,
+.checkout-form form .flex .inputBox select{
+    width:100%;
+    background-color: white;
+    font-size: 1.7rem;
+    color:var(--blue);
+    margin:1rem 0;
+    padding:1.2rem 1.4rem;
+    border-radius: .5rem;
+    border: var(--border);
+}
+
+
+.navbar_container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+}
+
+
+.navbar_container .navbar_style{
+    text-align: center;
+    font-size: 2.5rem;
+    padding-right: 2.5rem;
+    font-family: sans-serif;
+    font-weight: bold;    
+}
+
+
+.navbar_container .navbar_search{
+    padding-right: 20rem;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ @media (max-width:1200px){
+    html{font-size: 60%;}
+
+    .shopping-cart{
+        overflow-x: scroll;
+    }
+
+    .shopping-cart table{
+        width: 120rem;
+        align-items: center;
+        justify-content: center;
+        max-height: 100%;
+    }
+
+ }
+
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+}
+
+
+
+
+@media (max-width:768px){
+    #menu-btn{
+        display:inline-block;
+        transition: .2s linear;
+    }
+
+    #menu-btn.fa-times{
+        transform: rotate(180deg)
+    }
+
+    .header .flex .navbar{
+        position: absolute;
+        top:99%; right:0; left:0;
+        background-color: var(--blue);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
+
+    .header .flex .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .flex .navbar a{
+        margin: 2rem;
+        display: block;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+        /* overflow-x: scroll;的意思是内容可以打橫滑動，因爲x是橫軸 */
+        .display-product-table{
+            overflow-x: scroll;
+        }
+    
+        .display-product-table table{
+            width:70rem;
+        }
+
+}
+
+
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+
+    .products .box-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:1.5rem;
+    }
+} 
+
+
+
+
+
